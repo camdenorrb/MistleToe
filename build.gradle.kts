@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     idea
-    kotlin("jvm") version "1.3.40"
+    kotlin("jvm") version "1.3.50"
 }
 
 allprojects {
@@ -15,9 +15,14 @@ allprojects {
 
     repositories {
         jcenter()
+        maven("https://jitpack.io")
     }
 
     dependencies {
+
+        // Mine
+        implementation("com.github.camdenorrb:KCommons:+")
+        
         // Use the Kotlin JDK 8 standard library.
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
@@ -42,6 +47,6 @@ allprojects {
 
     tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
-        kotlinOptions.freeCompilerArgs = listOf("-Xjvm-default=compatibility")
+        kotlinOptions.freeCompilerArgs = listOf("-Xjvm-default=compatibility", "-Xuse-experimental=kotlin.ExperimentalStdlibApi")
     }
 }
