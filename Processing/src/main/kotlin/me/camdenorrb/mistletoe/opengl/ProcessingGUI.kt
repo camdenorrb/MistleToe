@@ -1,4 +1,4 @@
-package me.camdenorrb.mistletoe.processing
+package me.camdenorrb.mistletoe.opengl
 
 import me.camdenorrb.mistletoe.common.gui.base.ElementBase
 import me.camdenorrb.mistletoe.common.gui.impl.Shape

@@ -1,2 +1,2 @@
 rootProject.name = "MistleToe"
-include("Common", "Vulkan", "Processing")
+include("Common", "Vulkan", "OpenGL", "JavaFX", "Processing")
