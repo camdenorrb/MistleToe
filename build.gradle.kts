@@ -21,7 +21,7 @@ allprojects {
     dependencies {
 
         // Mine
-        implementation("com.github.camdenorrb:KCommons:+")
+        implementation("com.github.camdenorrb:KCommons:V1.0.6")
         
         // Use the Kotlin JDK 8 standard library.
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
