@@ -8,22 +8,40 @@ import java.nio.Buffer
 
 // USE
 
-// Not inlined to avoid potential returning from within
-
-fun <T : Struct, R : Any> T.use(block: (T) -> R): R {
-    return block(this).also { free() }
+inline fun <T : Struct, R : Any> T.use(block: (T) -> R): R {
+    try {
+        return block(this)
+    }
+    finally {
+        free()
+    }
 }
 
-fun <T : NativeResource, R : Any> T.use(block: (T) -> R): R {
-    return block(this).also { free() }
+inline fun <T : NativeResource, R : Any> T.use(block: (T) -> R): R {
+    try {
+        return block(this)
+    }
+    finally {
+        free()
+    }
 }
 
-fun <T : Buffer, R : Any> T.use(block: (T) -> R): R {
-    return block(this).also { free() }
+inline fun <T : Buffer, R : Any> T.use(block: (T) -> R): R {
+    try {
+        return block(this)
+    }
+    finally {
+        free()
+    }
 }
 
-fun <T : PointerBuffer, R : Any> T.use(block: (T) -> R): R {
-    return block(this).also { free() }
+inline fun <T : PointerBuffer, R : Any> T.use(block: (T) -> R): R {
+    try {
+        return block(this)
+    }
+    finally {
+        free()
+    }
 }
 
 

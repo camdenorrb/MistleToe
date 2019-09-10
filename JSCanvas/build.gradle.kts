@@ -15,4 +15,6 @@ dependencies {
     implementation(kotlin("stdlib-js"))
 }
 
-kotlin.target.browser { }
+kotlin.target.browser {
+    
+}
